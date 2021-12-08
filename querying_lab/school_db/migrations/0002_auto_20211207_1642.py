@@ -15,12 +15,12 @@ def seed_data(apps, schema_editor):
     s9 = Student(first_name='Beckett', last_name='Mariner', year=9, gpa=3.8)
     s10 = Student(first_name='Sam', last_name='Rutherford', year=9, gpa=2.0)
 
-    i1 = Instructor(first_name='Jackie', last_name='Daytona', hire_date='10/10/2001')
-    i2 = Instructor(first_name='Colin', last_name='Robinson', hire_date='04/10/2009')
-    i3 = Instructor(first_name='Guillermo', last_name='de la Cruz', hire_date='11/18/2009')
-    i4 = Instructor(first_name='Poppy', last_name='Li', hire_date='07/08/2011')
-    i5 = Instructor(first_name='Ian', last_name='Grimm', hire_date='11/05/2018')
-    i6 = Instructor(first_name='Brad', last_name='Baskshi', hire_date='02/02/2020')
+    i1 = Instructor(first_name='Jackie', last_name='Daytona', hire_date='2001-10-10')
+    i2 = Instructor(first_name='Colin', last_name='Robinson', hire_date='2009-04-10')
+    i3 = Instructor(first_name='Guillermo', last_name='de la Cruz', hire_date='2009-11-18')
+    i4 = Instructor(first_name='Poppy', last_name='Li', hire_date='2011-07-08')
+    i5 = Instructor(first_name='Ian', last_name='Grimm', hire_date='2018-11-05')
+    i6 = Instructor(first_name='Brad', last_name='Baskshi', hire_date='2020-02-02')
 
     c1 = Course(name='Math', instructor=i4, credits=5)
     c2 = Course(name='Science', instructor=i2, credits=5)
@@ -44,7 +44,7 @@ def seed_data(apps, schema_editor):
     sc9 = StudentCourse(student=s3, course=c3, grade='C+')
     sc10 = StudentCourse(student=s3, course=c1, grade='B')
     sc11 = StudentCourse(student=s3, course=c2, grade='B-')
-    sc12 = StudentCourse(student=s10, course=c9, grade='B+')
+    sc12 = StudentCourse(student=s10, course=c7, grade='B+')
     sc13 = StudentCourse(student=s4, course=c10, grade='A+')
     sc14 = StudentCourse(student=s4, course=c7, grade='A-')
     sc15 = StudentCourse(student=s4, course=c5, grade='A+')
@@ -67,11 +67,11 @@ def seed_data(apps, schema_editor):
     sc32 = StudentCourse(student=s9, course=c4, grade='B+')
 
     
-    data = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, i1, i2, i3, i4, i5, i6, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]
+    data = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, i1, i2, i3, i4, i5, i6, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, sc1, sc2, sc3, sc4, sc5, sc6, sc7, sc8, sc9, sc10, sc11, sc12, sc13, sc14, sc15, sc16, sc17, sc18, sc19, sc20, sc21, sc22, sc23, sc24, sc25, sc26, sc27, sc28, sc29, sc30, sc31, sc32]
 
     for item in data:
         item.save()
-    pass
+
 
 
 class Migration(migrations.Migration):
