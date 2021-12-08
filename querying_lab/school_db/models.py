@@ -21,4 +21,4 @@ class Course(models.Model):
 class StudentCourse(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    grade = models.FloatField()
+    grade = models.CharField(max_length=5)
