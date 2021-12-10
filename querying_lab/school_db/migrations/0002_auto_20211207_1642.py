@@ -40,7 +40,7 @@ def seed_data(apps, schema_editor):
     sc5 = StudentCourse(student=s2, course=c10, grade='A')
     sc6 = StudentCourse(student=s2, course=c8, grade='B-')
     sc7 = StudentCourse(student=s2, course=c2, grade='A+')
-    sc8 = StudentCourse(student=s10, course=c4, grade='B+')
+    sc8 = StudentCourse(student=s10, course=c4, grade='A')
     sc9 = StudentCourse(student=s3, course=c3, grade='C+')
     sc10 = StudentCourse(student=s3, course=c1, grade='B')
     sc11 = StudentCourse(student=s3, course=c2, grade='B-')
@@ -56,7 +56,7 @@ def seed_data(apps, schema_editor):
     sc21 = StudentCourse(student=s6, course=c10, grade='A')
     sc22 = StudentCourse(student=s6, course=c8, grade='B-')
     sc23 = StudentCourse(student=s7, course=c9, grade='A+')
-    sc24 = StudentCourse(student=s7, course=c4, grade='B+')
+    sc24 = StudentCourse(student=s7, course=c4, grade='A')
     sc25 = StudentCourse(student=s7, course=c3, grade='C+')
     sc26 = StudentCourse(student=s7, course=c6, grade='B')
     sc27 = StudentCourse(student=s8, course=c2, grade='B-')
@@ -65,9 +65,10 @@ def seed_data(apps, schema_editor):
     sc30 = StudentCourse(student=s9, course=c7, grade='A-')
     sc31 = StudentCourse(student=s9, course=c5, grade='A+')
     sc32 = StudentCourse(student=s9, course=c4, grade='B+')
+    sc33 = StudentCourse(student=s2, course=c4, grade='A')
 
     
-    data = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, i1, i2, i3, i4, i5, i6, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, sc1, sc2, sc3, sc4, sc5, sc6, sc7, sc8, sc9, sc10, sc11, sc12, sc13, sc14, sc15, sc16, sc17, sc18, sc19, sc20, sc21, sc22, sc23, sc24, sc25, sc26, sc27, sc28, sc29, sc30, sc31, sc32]
+    data = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, i1, i2, i3, i4, i5, i6, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, sc1, sc2, sc3, sc4, sc5, sc6, sc7, sc8, sc9, sc10, sc11, sc12, sc13, sc14, sc15, sc16, sc17, sc18, sc19, sc20, sc21, sc22, sc23, sc24, sc25, sc26, sc27, sc28, sc29, sc30, sc31, sc32, sc33 ]
 
     for item in data:
         item.save()
