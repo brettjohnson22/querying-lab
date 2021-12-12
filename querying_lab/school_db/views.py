@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.db.models import Count
 from .models import Student, Instructor, Course, StudentCourse
 
 
@@ -7,9 +6,9 @@ def index(request):
     students = Student.objects.all()
 
     # The following line creates a list that allows you to examine the data 
-    # from the Queryset in an easier to visualize way
-    # It can be examined with a breakpoint, but it is only a debugging tool
-    # It is not required 
+    # from a Queryset in an easier to visualize way
+    # It is not required for functionality!
+    # Place a breakpoint on line 14, then compare 'students' and 'data_visualization'
     data_visualization = [item for item in students]
 
     context = {
@@ -20,6 +19,7 @@ def index(request):
 def problem_one(request):
     # Find all students who have a GPA greater than 3.0. 
     # Order the data by highest GPAs first.
+
     context = {
         'students': None
     }
@@ -35,7 +35,7 @@ def problem_two(request):
     return render(request, 'school/two.html', context)
 
 def problem_three(request):
-    # Find all students who have a B+ in any class. 
+    # Find all students who have a A+ in any class and are NOT getting a C+ in any class. 
     # Order the data by student's first name alphabetically.
 
     context = {
@@ -75,11 +75,18 @@ def problem_six(request):
 # https://docs.djangoproject.com/en/4.0/topics/db/aggregation/
 # https://docs.djangoproject.com/en/4.0/ref/models/querysets/#annotate
 
+# Create a view function and template for each bonus problem you complete
+
 # BONUS ONE
-# Find the instructor who is only teaching one single course
+# Write a query to find any instructors who are only teaching one single course. Display the instructor and the course
 
 # BONUS TWO
 # Display all students along with the number of credits they are taking
 
 # BONUS THREE
 # Find all students who are getting an A in any course and average their GPAs. Display the number of students and their Average GPA
+
+# BONUS FOUR
+# Write a function that will replace student GPAs in the database with an accurate score based only on their current grades
+# This may require multiple queries
+# See https://www.indeed.com/career-advice/career-development/gpa-scale for a chart of what point value each grade is worth
