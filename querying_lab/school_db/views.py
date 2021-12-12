@@ -4,12 +4,22 @@ from .models import Student, Instructor, Course, StudentCourse
 
 
 def index(request):
-    return render(request, 'school/index.html')
+    students = Student.objects.all()
+
+    # The following line creates a list that allows you to examine the data 
+    # from the Queryset in an easier to visualize way
+    # It can be examined with a breakpoint, but it is only a debugging tool
+    # It is not required 
+    data_visualization = [item for item in students]
+
+    context = {
+        'students': students
+    }
+    return render(request, 'school/index.html', context)
 
 def problem_one(request):
     # Find all students who have a GPA greater than 3.0. 
     # Order the data by highest GPAs first.
-
     context = {
         'students': None
     }
